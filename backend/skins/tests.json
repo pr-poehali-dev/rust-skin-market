@@ -1,0 +1,40 @@
+{
+  "tests": [
+    {
+      "name": "Get all skins",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "0": {
+          "id": "number",
+          "name": "string",
+          "weapon": "string",
+          "rarity": "string",
+          "price": "number"
+        }
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new skin",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Test Skin",
+        "weapon": "Test Weapon",
+        "rarity": "rare",
+        "price": 1000,
+        "image_url": "/test.svg"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "name": "Test Skin",
+        "weapon": "Test Weapon",
+        "rarity": "rare",
+        "price": 1000
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

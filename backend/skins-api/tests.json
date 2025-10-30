@@ -1,0 +1,37 @@
+{
+  "tests": [
+    {
+      "name": "Get all skins",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "0": {
+          "id": "number",
+          "name": "string",
+          "weapon": "string",
+          "rarity": "string",
+          "price": "number"
+        }
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new skin",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тестовый скин",
+        "weapon": "Тестовое оружие",
+        "rarity": "common",
+        "price": 100
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": "number",
+        "name": "Тестовый скин"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
